@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Login</title>
+    <style>
+        /* CSS Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to right, #6a11cb, #2575fc);
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+
+        .container-login100 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .wrap-login100 {
+            width: 100%;
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .login100-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .login100-form-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .btn-face, .btn-google {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            background: #3b5998; /* Facebook Blue */
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-google {
+            background: #db4437; /* Google Red */
+        }
+
+        .btn-face:hover, .btn-google:hover {
+            opacity: 0.9;
+        }
+
+        .input100 {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .input100::placeholder {
+            color: #bbb;
+        }
+
+        .login100-form-btn {
+            background: #6a11cb; /* Button Gradient */
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .login100-form-btn:hover {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .txt2 {
+            font-size: 14px;
+            color: #ddd;
+            text-align: center;
+        }
+
+        .txt2 a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .txt2 a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form">
+                <span class="login100-form-title">Employer Login</span>
+                
+                <a href="#" class="btn-face">
+                    <i class="fa fa-facebook-official"></i> Facebook
+                </a>
+                <a href="#" class="btn-google">
+                    <img src="Login/images/icons/icon-google.png" alt="Google Login" style="width: 20px;"> Google
+                </a>
+                
+                <div>
+                    <label class="txt1">Username</label>
+                    <input class="input100" type="text" name="username" placeholder="Enter your username">
+                </div>
+                
+                <div>
+                    <label class="txt1">Password</label>
+                    <input class="input100" type="password" name="password" placeholder="Enter your password">
+                </div>
+                
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="submit">Login</button>
+                </div>
+                
+                <div class="w-full text-center">
+                    <span class="txt2">Not a member? <a href="#">Sign up now</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

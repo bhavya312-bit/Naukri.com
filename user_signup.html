@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Job Finder for Semi-Skilled Labor">
+  <meta name="author" content="Workociti">
+  <meta name="keywords" content="Job Finder, Semi-Skilled Labor, Workociti">
+  <title>Job Finder Signup</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background: #0056b3;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .form {
+      padding: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    .form-row label {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .form-row input, 
+    .form-row select, 
+    .form-row textarea {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-row textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .form-row select {
+      cursor: pointer;
+    }
+
+    .form-row input[type="file"] {
+      padding: 5px;
+    }
+
+    .btn {
+      background: #0056b3;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto 0;
+      width: 100%;
+      max-width: 200px;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: #004099;
+    }
+
+    .footer {
+      background: #f4f4f9;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h2>Signup for Job Finder</h2>
+    </div>
+    <form class="form" method="POST" enctype="multipart/form-data">
+      <!-- Email -->
+      <div class="form-row">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+      </div>
+
+      <!-- Password -->
+      <div class="form-row">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-row">
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password" onkeyup="validatePassword();" required>
+      </div>
+
+      <!-- Name -->
+      <div class="form-row">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="full_name" placeholder="Enter your full name" required>
+      </div>
+
+      <!-- Date of Birth -->
+      <div class="form-row">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+
+      <!-- Gender -->
+      <div class="form-row">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <!-- Skills -->
+      <div class="form-row">
+        <label for="skills">Skills</label>
+        <textarea id="skills" name="skills" placeholder="E.g., Plumber, Electrician, Welder, etc." required></textarea>
+      </div>
+
+      <!-- Location -->
+      <div class="form-row">
+        <label for="location">Preferred Location</label>
+        <select id="location" name="location" required>
+          <option value="India">India</option>
+          <option value="Poland">Poland</option>
+          <option value="Australia">Australia</option>
+          <option value="New Zealand">New Zealand</option>
+        </select>
+      </div>
+
+      <!-- Resume Upload -->
+      <div class="form-row">
+        <label for="resume">Upload Resume</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 Job Finder. All Rights Reserved.</p>
+  </div>
+
+  <!-- JavaScript for Password Validation -->
+  <script>
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirm_password");
+
+    function validatePassword() {
+      if (password.value !== confirmPassword.value) {
+        confirmPassword.setCustomValidity("Passwords do not match.");
+      } else {
+        confirmPassword.setCustomValidity("");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

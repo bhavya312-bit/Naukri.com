@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Employer Signup - Job Recruitment Platform">
+  <meta name="author" content="Workociti">
+  <title>Employer Signup</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #343a40;
+      padding: 20px;
+    }
+
+    .wrapper {
+      max-width: 800px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .card {
+      padding: 30px;
+    }
+
+    .card-heading {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .card-heading .title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #495057;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    .form-row .name {
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #495057;
+    }
+
+    .input--style-6,
+    .textarea--style-6,
+    select {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+      font-size: 14px;
+      color: #495057;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .input--style-6:focus,
+    .textarea--style-6:focus,
+    select:focus {
+      border-color: #007bff;
+    }
+
+    .textarea--style-6 {
+      min-height: 100px;
+      resize: none;
+    }
+
+    .form-row select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .form-row select option {
+      padding: 5px;
+    }
+
+    .card-footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007bff;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 20px;
+      }
+
+      .form-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="wrapper">
+      <div class="card">
+        <div class="card-heading">
+          <h2 class="title">Employer Signup</h2>
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            <div class="form-row">
+              <div class="name">Employer Company Name</div>
+              <input class="input--style-6" type="text" name="company_name" placeholder="Enter Company Name" required>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Recruiter Name</div>
+              <input class="input--style-6" type="text" name="recruiter_name" placeholder="Enter Recruiter Name" required>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Official Email Address</div>
+              <input class="input--style-6" type="email" name="email" placeholder="example@company.com" required>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Password</div>
+              <input class="input--style-6" type="password" name="password" id="password" placeholder="Enter Password" required>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Confirm Password</div>
+              <input class="input--style-6" type="password" name="confirm_password" id="confirm_password" placeholder="Re-enter Password" onkeyup="validatePassword();" required>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Contact Number</div>
+              <input class="input--style-6" type="tel" name="contact" placeholder="Enter Contact Number" required>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Registered Office Address</div>
+              <textarea class="textarea--style-6" name="address" placeholder="Enter Office Address"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Location</div>
+              <select name="location" required>
+                <option value="">Select Country</option>
+                <option value="India">India</option>
+                <option value="Poland">Poland</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Australia">Australia</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="name">City</div>
+              <input class="input--style-6" type="text" name="city" placeholder="Enter City">
+            </div>
+
+            <div class="form-row">
+              <div class="name">About the Company</div>
+              <textarea class="textarea--style-6" name="about_company" placeholder="Brief description of the company"></textarea>
+            </div>
+
+            <div class="card-footer">
+              <button class="btn" type="submit">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function validatePassword() {
+      const password = document.getElementById("password");
+      const confirmPassword = document.getElementById("confirm_password");
+
+      if (password.value !== confirmPassword.value) {
+        confirmPassword.setCustomValidity("Passwords don't match");
+      } else {
+        confirmPassword.setCustomValidity('');
+      }
+    }
+  </script>
+</body>
+
+</html>
